@@ -3,15 +3,16 @@ import day2_code
 
 test_input = ['7 6 4 2 1','1 2 7 8 9','9 7 6 2 1','1 3 2 4 5','8 6 4 4 1','1 3 6 7 9']
 
+
 class TestDay2Code(unittest.TestCase):
   
   def test_refine_safe_reports(self):
-    self.assertTrue(day2_code.define_safe_reports(test_input[0]))
-    self.assertFalse(day2_code.define_safe_reports(test_input[1]))
-    self.assertFalse(day2_code.define_safe_reports(test_input[2]))
-    self.assertFalse(day2_code.define_safe_reports(test_input[3]))
-    self.assertFalse(day2_code.define_safe_reports(test_input[4]))
-    self.assertTrue(day2_code.define_safe_reports(test_input[5]))
+    self.assertTrue(day2_code.is_safe_report(test_input[0].split()))
+    self.assertFalse(day2_code.is_safe_report(test_input[1].split()))
+    self.assertFalse(day2_code.is_safe_report(test_input[2].split()))
+    self.assertFalse(day2_code.is_safe_report(test_input[3].split()))
+    self.assertFalse(day2_code.is_safe_report(test_input[4].split()))
+    self.assertTrue(day2_code.is_safe_report(test_input[5].split()))
 
 
 if __name__ == '__main__':
