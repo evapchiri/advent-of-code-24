@@ -1,18 +1,27 @@
 import unittest
 import day2_code
 
-test_input = ['7 6 4 2 1','1 2 7 8 9','9 7 6 2 1','1 3 2 4 5','8 6 4 4 1','1 3 6 7 9']
+test_input = ['7 6 4 2 1','1 2 7 8 9','9 7 6 2 1','1 3 2 4 5','8 6 4 4 1','1 3 6 7 9', '1 9 8 7 6 5', '86 80 76 73 75']
 
 
 class TestDay2Code(unittest.TestCase):
   
-  def test_refine_safe_reports(self):
+  def test_is_safe_report(self):
     self.assertTrue(day2_code.is_safe_report(test_input[0].split()))
     self.assertFalse(day2_code.is_safe_report(test_input[1].split()))
     self.assertFalse(day2_code.is_safe_report(test_input[2].split()))
     self.assertFalse(day2_code.is_safe_report(test_input[3].split()))
     self.assertFalse(day2_code.is_safe_report(test_input[4].split()))
     self.assertTrue(day2_code.is_safe_report(test_input[5].split()))
+  
+  def test_dampener(self):
+    self.assertTrue(day2_code.prob_dampener(test_input[0].split(),1))
+    self.assertFalse(day2_code.prob_dampener(test_input[1].split(),1))
+    self.assertFalse(day2_code.prob_dampener(test_input[2].split(),1))
+    self.assertTrue(day2_code.prob_dampener(test_input[3].split(),1))
+    self.assertTrue(day2_code.prob_dampener(test_input[4].split(),1))
+    self.assertTrue(day2_code.prob_dampener(test_input[5].split(),1))
+    self.assertTrue(day2_code.prob_dampener(test_input[6].split(),1))
 
 
 if __name__ == '__main__':
