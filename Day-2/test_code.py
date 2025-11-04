@@ -15,13 +15,13 @@ class TestDay2Code(unittest.TestCase):
     self.assertTrue(day2_code.is_safe_report(test_input[5].split()))
   
   def test_dampener(self):
-    self.assertTrue(day2_code.prob_dampener(test_input[0].split(),1))
-    self.assertFalse(day2_code.prob_dampener(test_input[1].split(),1))
-    self.assertFalse(day2_code.prob_dampener(test_input[2].split(),1))
-    self.assertTrue(day2_code.prob_dampener(test_input[3].split(),1))
-    self.assertTrue(day2_code.prob_dampener(test_input[4].split(),1))
-    self.assertTrue(day2_code.prob_dampener(test_input[5].split(),1))
-    self.assertTrue(day2_code.prob_dampener(test_input[6].split(),1))
+    self.assertTrue(day2_code.is_safe_with_dampener(test_input[0].split()))
+    self.assertFalse(day2_code.is_safe_with_dampener(test_input[1].split()))
+    self.assertFalse(day2_code.is_safe_with_dampener(test_input[2].split()))
+    self.assertTrue(day2_code.is_safe_with_dampener(test_input[3].split()))
+    self.assertTrue(day2_code.is_safe_with_dampener(test_input[4].split()))
+    self.assertTrue(day2_code.is_safe_with_dampener(test_input[5].split()))
+    self.assertTrue(day2_code.is_safe_with_dampener(test_input[6].split()))
 
 
 if __name__ == '__main__':
