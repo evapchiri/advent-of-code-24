@@ -29,7 +29,7 @@ class SurroundingChar():
 
   def SurroundingLetters(self):
     """
-    Gives back / updates a dict of all surrounding letters of the character.
+    Gives back / updates a dict of all surrounding letters of the character in the current offset.
     """
     return {
       'NextLetter': self.NextLetter,
@@ -75,13 +75,44 @@ def XMAS_count(input):
     line_index += 1
 
   # print(count_XMAS)
-  print(f'⭐️⭐️ Final count of XMAS is {count_XMAS}')
+  print(f'\n⭐️ Final count of XMAS is {count_XMAS}\n')
   return count_XMAS
 
 XMAS_count(splitted_input)
 
 
+def countingX_MAS(input):
+  hit_word = 'MAS'
+  count_X_MAS = 0 
+  line_index = 0
+  surrounding_letters = {
+      'NextLetter': '',
+      'PrevLetter': '',
+      'TopLetter': '',
+      'BottomLetter': '',
+      'DiagTopLeftLetter': '',
+      'DiagTopRightLetter': '',
+      'DiagBotLeftLetter': '',
+      'DiagBotRightLetter': ''
+      }
+  for line in input:
+    i = 0
+    for char in line:
+      if char == hit_word[1]: # when 'A' is found this time ..
+        char = SurroundingChar(i, line_index, line, input, 1)
+        surrounding_letters = char.SurroundingLetters()
+        hit_TopLtoBotR = True if ('M','S') == (surrounding_letters['DiagTopLeftLetter'],surrounding_letters['DiagBotRightLetter']) else False
+        hit_TopRtoBotL = True if ('M','S') == (surrounding_letters['DiagTopRightLetter'],surrounding_letters['DiagBotLeftLetter']) else False
+        hit_BotRtoTopL = True if ('M','S') == (surrounding_letters['DiagBotRightLetter'],surrounding_letters['DiagTopLeftLetter']) else False
+        hit_BotLtoTopR = True if ('M','S') == (surrounding_letters['DiagBotLeftLetter'],surrounding_letters['DiagTopRightLetter']) else False
+        count_X_MAS += 1 if ([hit_TopLtoBotR,hit_TopRtoBotL,hit_BotRtoTopL,hit_BotLtoTopR].count(True) == 2) else 0
+      i += 1
 
+    line_index += 1 
 
-# print(splitted_input[0][0])
+  print(f'\n⭐️⭐️ Final count of X-MAS is {count_X_MAS}\n')
+
+  return count_X_MAS
+
+countingX_MAS(splitted_input)
 
