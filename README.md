@@ -10,7 +10,7 @@ In preparation to battle up Advent of Code 2025......
 
 ~~Day 4~~ ⭐️⭐️
 
-Day 5
+~~Day 5~~ ⭐️⭐️
 
 Day 6
 
