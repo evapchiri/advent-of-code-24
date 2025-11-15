@@ -71,6 +71,7 @@ def get_correct_ord_updates(allowed_values:dict, updates_to_print:list):
       next
   return correctly_ordered
 
+
 def get_incorrect_ord_updates(allowed_values:dict, updates_to_print:list):
   """
   Gives back a LIST of incorrectly ordered updates. Each update is now a LIST of int (pages).
